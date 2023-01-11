@@ -7,12 +7,4 @@ import User from '../models/user.model';
 export class UserService {
 
   constructor() { }
-
-  login(user: User): boolean {
-    return true;
-  }
-
-  logoff(): boolean {
-    return true;
-  }
 }
