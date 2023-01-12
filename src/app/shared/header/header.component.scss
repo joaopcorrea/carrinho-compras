@@ -1,5 +1,24 @@
 .container {
   background: #fff159;
-  height: 100px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100px - (11px * 2));
+  padding: 11px 85px;
+  width: calc(100% - (85px * 2));
+
+  .top {
+    display: flex;
+    height: 50%;
+
+    .logo {
+      background-image: url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.21.20/mercadolibre/logo-pt__large_plus.png);
+      height: 34px;
+      width: 134px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+  }
 }
