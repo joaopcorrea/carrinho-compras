@@ -7,7 +7,7 @@ import User from '../models/user.model';
   providedIn: 'root',
 })
 export class AuthService {
-  loggedUser: User | undefined = localStorage.getItem('loggedUser')
+  private loggedUser: User | undefined = localStorage.getItem('loggedUser')
     ? JSON.parse(localStorage.getItem('loggedUser') ?? '')
     : undefined;
 
@@ -33,19 +33,17 @@ export class AuthService {
   }
 
   login(email: string, password: string): User | undefined {
-    this.http
-      .get('http://localhost:3000/users')
-      .subscribe({
-        next: (users) => {
-          const user = (users as User[]).find(
-            (u) => u.email === email && u.password === password
-          );
+    this.http.get('http://localhost:3000/users').subscribe({
+      next: (users) => {
+        const user = (users as User[]).find(
+          (u) => u.email === email && u.password === password
+        );
 
-          if (user) {
-            this.persistLoggedUser(user);
-          }
-        },
-      });
+        if (user) {
+          this.persistLoggedUser(user);
+        }
+      },
+    });
 
     return this.loggedUser;
   }

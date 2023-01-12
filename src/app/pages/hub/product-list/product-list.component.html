@@ -1,1 +1,6 @@
-<p>product-list works!</p>
+<div class="container">
+  <div class="product-card" *ngFor="let product of products" [routerLink]="'/hub/product/' + product.id">
+    <h1>{{product.name}}</h1>
+    <span>{{product.price}}</span>
+  </div>
+</div>

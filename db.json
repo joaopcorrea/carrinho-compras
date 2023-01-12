@@ -6,5 +6,52 @@
       "email": "admin@email.com",
       "password": "admin"
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Garrafa Minnie",
+      "description": "Garrafa transparente da Minnie com tampa vermelha",
+      "price": 19.9,
+      "stock": 5,
+      "imageUrl": "",
+      "sellerId": 1
+    },
+    {
+      "id": 2,
+      "name": "Samsung Buds 2",
+      "description": "Samsung Buds 2 branco com leds coloridos",
+      "price": 249.9,
+      "stock": 2,
+      "imageUrl": "",
+      "sellerId": 1
+    },
+    {
+      "id": 3,
+      "name": "Headset HyperX Cloud",
+      "description": "Headset gamer preto e vermelho da marca HyperX modelo Cloud",
+      "price": 410,
+      "stock": 10,
+      "imageUrl": "",
+      "sellerId": 1
+    },
+    {
+      "id": 1673487435177,
+      "name": "Garrafa Minnyezinha",
+      "description": "Garrafa transparente da Minnie com tampa vermelha",
+      "price": 19.9,
+      "stock": 5,
+      "imageUrl": "",
+      "sellerId": 1
+    },
+    {
+      "id": 1673489269881,
+      "name": "deve",
+      "description": "",
+      "price": 50,
+      "stock": 0,
+      "imageUrl": "",
+      "sellerId": 1
+    }
   ]
 }

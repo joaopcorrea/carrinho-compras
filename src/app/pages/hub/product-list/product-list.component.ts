@@ -1,4 +1,6 @@
+import { ProductService } from './../../../services/product.service';
 import { Component } from '@angular/core';
+import Product from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
+  products: Product[];
 
+  constructor(productService: ProductService){
+    this.products = productService.getPurchasableProducts();
+  }
 }

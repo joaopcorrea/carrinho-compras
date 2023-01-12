@@ -1,3 +1,4 @@
+import { ProductDetailsComponent } from './pages/hub/product-details/product-details.component';
 import { YourProductsComponent } from './pages/hub/your-products/your-products.component';
 import { ProductListComponent } from './pages/hub/product-list/product-list.component';
 import { PasswordRecoveryComponent } from './pages/password-recovery/password-recovery.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'hub', component: HubComponent, canActivate: [AuthService], children: [
     { path: 'home', component: HomeComponent, canActivate: [AuthService] },
     { path: 'products', component: ProductListComponent, canActivate: [AuthService] },
+    { path: 'product/:id', component: ProductDetailsComponent, canActivate: [AuthService] },
     { path: 'your-products', component: YourProductsComponent, canActivate: [AuthService] }
   ] },
   { path: '**', redirectTo: 'hub/home' }

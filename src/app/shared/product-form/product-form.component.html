@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Hi {{data.product ? data.product.name : 'Novo Produto'}}</h1>
+<div mat-dialog-content>
+
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="image">Imagem Url</label>
+      <input type="text" id="image" formControlName="imageUrl" />
+    </div>
+
+    <div>
+      <label for="name">Nome</label>
+      <input type="text" id="name" formControlName="name" />
+    </div>
+
+    <div>
+      <label for="price">Preço</label>
+      <input type="number" id="price" formControlName="price" />
+    </div>
+
+    <div>
+      <label for="description">Descrição</label>
+      <input type="text" id="description" formControlName="description" />
+    </div>
+
+    <div>
+      <label for="stock">Estoque</label>
+      <input type="number" id="stock" formControlName="stock" />
+    </div>
+
+    <button class="button" type="submit">Salvar</button>
+  </form>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button>No Thanks</button>
+  <button mat-button cdkFocusInitial>Ok</button>
+</div>

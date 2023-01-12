@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { YourProductsComponent } from './your-products/your-products.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -17,6 +18,7 @@ import { YourProductsComponent } from './your-products/your-products.component';
     HomeComponent,
     ProductListComponent,
     YourProductsComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,9 @@
-<p>your-products works!</p>
+<div class="container">
+  <h1>Seus produtos à venda</h1>
+  <button (click)="openDialog('insert')">Adicionar novo</button>
+  <div class="product-card" *ngFor="let product of products">
+    <h1>{{product.name}}</h1>
+    <span>{{product.price}}</span>
+    <button (click)="openDialog('update', product)">Editar</button>
+  </div>
+</div>

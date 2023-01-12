@@ -1,14 +1,27 @@
 export default class Product {
   id: number;
   name: string;
+  description: string;
   price: number;
+  stock: number;
   imageUrl: string;
+  sellerId: number;
 
-  constructor(name: string, price: number, imageUrl: string ) {
+  constructor(
+    name: string,
+    description: string,
+    price: number,
+    stock: number,
+    imageUrl: string,
+    sellerId: number,
+  ) {
     this.id = this.getNewId();
     this.name = name;
+    this.description = description;
     this.price = price;
+    this.stock = stock;
     this.imageUrl = imageUrl;
+    this.sellerId = sellerId;
   }
 
   private getNewId(): number {
