@@ -9,6 +9,7 @@
   .top {
     display: flex;
     height: 50%;
+    justify-content: space-between;
 
     .logo {
       background-image: url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.21.20/mercadolibre/logo-pt__large_plus.png);
@@ -18,7 +19,47 @@
   }
 
   .bottom {
+    align-items: flex-end;
     display: flex;
+    height: 50%;
     justify-content: space-between;
+
+    .nav-menu-list {
+      display: flex;
+      list-style-type: none;
+
+      .nav-menu-item {
+        color: rgba(51,51,51,.6);
+        cursor: pointer;
+        font-size: 14px;
+        margin-right: 20px;
+        transition: all 300ms ease;
+      }
+
+      .nav-menu-item:hover {
+        color: rgba(51,51,51);
+      }
+    }
+
+    .nav-header-menu {
+      align-items: flex-end;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      width: 350px;
+
+      .nav-header-user {
+        display: flex;
+
+        .nav-header-avatar-user {
+          margin-right: 5px;
+        }
+      }
+
+      .icon {
+        display: flex;
+        align-items: flex-end;
+      }
+    }
   }
 }
