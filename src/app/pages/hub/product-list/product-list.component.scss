@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px 200px;
+
+  .product-card {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 -1px 2px 0 rgb(0 0 0 / 10%);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 10px 0;
+    width: 250px;
+
+    img {
+      border-bottom: 1px solid #ccc;
+      height: 200px;
+      object-fit: contain;
+      padding-bottom: 10px;
+      width: 250px;
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+
+      padding: 20px;
+    }
+  }
+}

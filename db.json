@@ -14,8 +14,8 @@
       "description": "Garrafa transparente da Minnie com tampa vermelha",
       "price": 19.9,
       "stock": 5,
-      "imageUrl": "",
-      "sellerId": 1
+      "imageUrl": "https://cf.shopee.com.br/file/f280249a091d7a674e3cdc7d38b65f6a",
+      "sellerId": 2
     },
     {
       "id": 2,
@@ -23,8 +23,8 @@
       "description": "Samsung Buds 2 branco com leds coloridos",
       "price": 249.9,
       "stock": 2,
-      "imageUrl": "",
-      "sellerId": 1
+      "imageUrl": "https://i.zst.com.br/thumbs/12/34/f/-528296952.jpg",
+      "sellerId": 2
     },
     {
       "id": 3,
@@ -32,8 +32,8 @@
       "description": "Headset gamer preto e vermelho da marca HyperX modelo Cloud",
       "price": 410,
       "stock": 10,
-      "imageUrl": "",
-      "sellerId": 1
+      "imageUrl": "https://m.media-amazon.com/images/I/71MJ3OaVqBL._AC_SL1500_.jpg",
+      "sellerId": 2
     },
     {
       "id": 1673487435177,
@@ -41,8 +41,8 @@
       "description": "Garrafa transparente da Minnie com tampa vermelha",
       "price": 19.9,
       "stock": 5,
-      "imageUrl": "",
-      "sellerId": 1
+      "imageUrl": "https://aguamineralhydrate.com.br/wp-content/uploads/2016/08/Garrafao-Premium-600x600.jpg",
+      "sellerId": 2
     },
     {
       "id": 1673489269881,
@@ -50,8 +50,8 @@
       "description": "",
       "price": 50,
       "stock": 0,
-      "imageUrl": "",
-      "sellerId": 1
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQODHzsTFxBL6Ep8MXjie2v5PK8sZOFQZazqRmgBilbRSB_59o-UZT6T8se_lzD11DHL4g&usqp=CAU",
+      "sellerId": 2
     }
   ]
 }
