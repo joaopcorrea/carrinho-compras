@@ -15,7 +15,8 @@ import { PasswordRecoveryComponent } from './password-recovery/password-recovery
   declarations: [
     LoginComponent,
     RegistrationComponent,
-    PasswordRecoveryComponent
+    PasswordRecoveryComponent,
+
   ],
   imports: [
     CommonModule,

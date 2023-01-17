@@ -13,7 +13,7 @@ export class ProductService {
   private sellingProducts: Product[] = [];
   private purchasableProducts: Product[] = [];
 
-  constructor(private authService: AuthService, private http: HttpClient) {
+  constructor(authService: AuthService, private http: HttpClient) {
     this.userId = authService.getLoggedUser()!.id;
 
     this.http.get(this.apiUrl + '/products').subscribe({

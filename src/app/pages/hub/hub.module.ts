@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { YourProductsComponent } from './your-products/your-products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-
+import { CartComponent } from '../hub/cart/cart.component';
 
 
 @NgModule({
@@ -19,6 +19,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductListComponent,
     YourProductsComponent,
     ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,

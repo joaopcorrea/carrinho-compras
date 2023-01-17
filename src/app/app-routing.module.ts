@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { HubComponent } from './pages/hub/hub.component';
+import { CartComponent } from './pages/hub/cart/cart.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthService] },
     { path: 'products', component: ProductListComponent, canActivate: [AuthService] },
     { path: 'product/:id', component: ProductDetailsComponent, canActivate: [AuthService] },
-    { path: 'your-products', component: YourProductsComponent, canActivate: [AuthService] }
+    { path: 'your-products', component: YourProductsComponent, canActivate: [AuthService] },
+    { path: 'cart', component: CartComponent, canActivate: [AuthService] },
   ] },
   { path: '**', redirectTo: 'hub/home' }
 ];

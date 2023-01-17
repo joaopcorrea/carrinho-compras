@@ -14,20 +14,26 @@
       </li>
     </ul>
     <nav class="nav-header-menu">
-      <div class="nav-header-user">
+      <div (click)="userMenu.classList.toggle('show')" class="nav-header-user">
         <span class="nav-header-avatar-user icon">
           <mat-icon>account_circle</mat-icon>
         </span>
         <span class="nav-header-username icon">JOAO PEDRO</span>
+        <span class="nav-header-arrow icon">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </span>
+        <div #userMenu class="user-menu">
+          <div class="logout" (click)="logout()">Sair</div>
+        </div>
       </div>
       <a class="nav-header-item">Compras</a>
       <a class="nav-header-item">Favoritos</a>
       <a class="nav-header-item icon">
         <mat-icon>notifications_none</mat-icon>
       </a>
-      <a class="nav-header-item icon">
+      <span class="nav-header-item icon" routerLink="/hub/cart">
         <mat-icon>shopping_cart</mat-icon>
-      </a>
+      </span>
     </nav>
   </div>
 </div>
