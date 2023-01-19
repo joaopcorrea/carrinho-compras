@@ -2,9 +2,15 @@
   "users": [
     {
       "id": 1,
-      "name": "Administrador",
+      "name": "JOÃO PEDROKAA YEY",
       "email": "admin@email.com",
       "password": "admin"
+    },
+    {
+      "id": 1674087674967,
+      "name": "Joãozinho",
+      "email": "jp@email.com",
+      "password": "123"
     }
   ],
   "products": [
@@ -52,6 +58,118 @@
       "stock": 0,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQODHzsTFxBL6Ep8MXjie2v5PK8sZOFQZazqRmgBilbRSB_59o-UZT6T8se_lzD11DHL4g&usqp=CAU",
       "sellerId": 2
+    },
+    {
+      "id": 1674087701769,
+      "name": "Novo produto",
+      "description": "Description",
+      "price": 12,
+      "stock": 1,
+      "imageUrl": "",
+      "sellerId": 1674087674967
+    },
+    {
+      "id": 1674087727282,
+      "name": "",
+      "description": "",
+      "price": 0,
+      "stock": 0,
+      "imageUrl": "",
+      "sellerId": 1674087674967
+    },
+    {
+      "id": 1674088298891,
+      "name": "",
+      "description": "",
+      "price": 0,
+      "stock": 0,
+      "imageUrl": "",
+      "sellerId": 1674087674967
+    },
+    {
+      "id": 1674088811469,
+      "name": "",
+      "description": "",
+      "price": 0,
+      "stock": 0,
+      "imageUrl": "",
+      "sellerId": 1674087674967
+    },
+    {
+      "id": 1674088823649,
+      "name": "",
+      "description": "",
+      "price": 0,
+      "stock": 0,
+      "imageUrl": "",
+      "sellerId": 1674087674967
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "cartItems": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Garrafa Minnie",
+            "description": "Garrafa transparente da Minnie com tampa vermelha",
+            "price": 19.9,
+            "stock": 5,
+            "imageUrl": "https://cf.shopee.com.br/file/f280249a091d7a674e3cdc7d38b65f6a",
+            "sellerId": 2
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "id": 2,
+            "name": "Samsung Buds 2",
+            "description": "Samsung Buds 2 branco com leds coloridos",
+            "price": 249.9,
+            "stock": 2,
+            "imageUrl": "https://i.zst.com.br/thumbs/12/34/f/-528296952.jpg",
+            "sellerId": 2
+          },
+          "quantity": 5
+        },
+        {
+          "product": {
+            "id": 1673487435177,
+            "name": "GARRAFÃO",
+            "description": "Garrafa transparente da Minnie com tampa vermelha",
+            "price": 19.9,
+            "stock": 5,
+            "imageUrl": "https://aguamineralhydrate.com.br/wp-content/uploads/2016/08/Garrafao-Premium-600x600.jpg",
+            "sellerId": 2
+          },
+          "quantity": 3
+        },
+        {
+          "product": {
+            "id": 1673489269881,
+            "name": "deve",
+            "description": "",
+            "price": 50,
+            "stock": 0,
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQODHzsTFxBL6Ep8MXjie2v5PK8sZOFQZazqRmgBilbRSB_59o-UZT6T8se_lzD11DHL4g&usqp=CAU",
+            "sellerId": 2
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": 1673487435177,
+            "name": "GARRAFÃO",
+            "description": "Garrafa transparente da Minnie com tampa vermelha",
+            "price": 19.9,
+            "stock": 5,
+            "imageUrl": "https://aguamineralhydrate.com.br/wp-content/uploads/2016/08/Garrafao-Premium-600x600.jpg",
+            "sellerId": 2
+          },
+          "quantity": 1
+        }
+      ]
     }
   ]
 }

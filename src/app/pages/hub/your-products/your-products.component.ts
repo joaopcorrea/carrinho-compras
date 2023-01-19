@@ -1,5 +1,6 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { ProductFormComponent } from './../../../shared/product-form/product-form.component';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import Product from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
@@ -9,18 +10,28 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './your-products.component.html',
   styleUrls: ['./your-products.component.scss'],
 })
-export class YourProductsComponent {
+export class YourProductsComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(productService: ProductService, public dialog: MatDialog) {
-    productService.getProducts().subscribe({
+  constructor(
+    private productService: ProductService,
+    private authService: AuthService,
+    public dialog: MatDialog
+  ) {}
+
+  ngOnInit(): void {
+    this.loadProducts();
+  }
+
+  private loadProducts = () =>
+    this.productService.getProducts().subscribe({
       next: (products) => {
-        this.products = (products as Product[]).filter((p) => p.sellerId === 1);
+        this.products = (products as Product[]).filter(
+          (p) => p.sellerId === this.authService.getLoggedUser()?.id
+        );
         console.log('produtos', this.products);
       },
     });
-    // this.products = productService.getSellingProducts();
-  }
 
   openDialog(
     operation: 'insert' | 'update',
@@ -31,8 +42,7 @@ export class YourProductsComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      // this.animal = result;
+      this.loadProducts();
     });
   }
 }

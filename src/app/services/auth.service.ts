@@ -7,7 +7,7 @@ import User from '../models/user.model';
   providedIn: 'root',
 })
 export class AuthService {
-  private loggedUser: User | null = localStorage.getItem('loggedUser')
+  private loggedUser: User = localStorage.getItem('loggedUser')
     ? JSON.parse(localStorage.getItem('loggedUser')!)
     : null;
 
@@ -23,7 +23,7 @@ export class AuthService {
     }
   }
 
-  private persistLoggedUser(user: User) {
+  persistLoggedUser(user: User) {
     localStorage.setItem('loggedUser', JSON.stringify(user));
     this.loggedUser = user;
   }

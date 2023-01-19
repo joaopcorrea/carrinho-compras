@@ -16,7 +16,7 @@ export class CartService {
 
   getCart = () => this.http.get(this.apiUrl + '/carts/' + this.userId);
 
-  createCart = (cart: Cart) => this.http.post(this.apiUrl + '/carts', cart);
+  createCart = () => this.http.post(this.apiUrl + '/carts', new Cart(this.userId));
 
   updateCart = (cart: Cart) => this.http.put(this.apiUrl + '/carts/' + cart.id, cart);
 

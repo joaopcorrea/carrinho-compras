@@ -1,1 +1,22 @@
-<p>registration works!</p>
+<div class="header">
+  <a class="logo"></a>
+</div>
+
+<div class="container">
+  <h1>Os seus dados</h1>
+  <h3>Valide seus dados para que ninguém possa acessar ou criar uma conta no seu nome.</h3>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label for="name">Nome</label>
+    <input type="text" id="name" formControlName="name" />
+    <label for="email">E-mail</label>
+    <input type="text" id="email" formControlName="email" />
+    <label for="passwword">Senha</label>
+    <input type="password" id="password" formControlName="password" />
+
+    <button class="button" type="submit">Cadastrar</button>
+  </form>
+  <a routerLink="/login">Já tenho uma conta</a>
+</div>
+
+
+<div class="footer"></div>

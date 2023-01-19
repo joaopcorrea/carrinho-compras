@@ -46,7 +46,6 @@
       color: #333;
       display: flex;
       justify-content: space-between;
-      width: 350px;
 
       .nav-header-user {
         cursor: pointer;
@@ -100,6 +99,7 @@
 
       .nav-header-item {
         cursor: pointer;
+        margin-left: 15px;
         transition: all 200ms ease;
       }
 

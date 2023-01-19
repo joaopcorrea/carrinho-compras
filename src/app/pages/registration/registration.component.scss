@@ -1,0 +1,86 @@
+.header {
+  background: #fff159;
+  display: flex;
+  flex-direction: column;
+  height: calc(200px - (11px * 2));
+  padding: 11px 85px;
+  width: calc(100% - (85px * 2));
+
+  .logo {
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.21.20/mercadolibre/logo-pt__large_plus.png);
+    height: 34px;
+    width: 134px;
+  }
+}
+
+.container {
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: -100px;
+  padding: 50px;
+  width: 350px;
+
+  h1 {
+    font-weight: 500;
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    input {
+      border: none;
+      border-radius: 6px;
+      box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+      // margin: 1px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    input:focus {
+      border-color: transparent;
+      box-shadow: 0 0 0 0.125em #3483fa;
+      outline: none;
+    }
+
+    label {
+      cursor: text;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 15px;
+    }
+
+    button {
+      background-color: #3483fa;
+      border-color: transparent;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      margin: 30px 0;
+      padding: 10px;
+    }
+  }
+
+  a {
+    color: #3483fa;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+.footer {}

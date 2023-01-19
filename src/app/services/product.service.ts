@@ -21,7 +21,6 @@ export class ProductService {
         this.sellingProducts = (products as Product[]).filter(
           (p) => p.sellerId === this.userId
         );
-        console.log('userid', this.sellingProducts);
 
         this.purchasableProducts = (products as Product[]).filter(
           (p) => p.sellerId !== this.userId
@@ -43,17 +42,7 @@ export class ProductService {
     return this.sellingProducts;
   }
 
-  getProductById(id: number): Product | undefined {
-    let product;
-
-    this.http.get(this.apiUrl + '/products/' + id).subscribe({
-      next: (response) => {
-        product = response as Product;
-      }
-    });
-
-    return product;
-  }
+  getProductById = (id: number) => this.http.get(this.apiUrl + '/products/' + id)
 
   createProduct(product: Product) {
     this.http.post(this.apiUrl + '/products', product).subscribe({
