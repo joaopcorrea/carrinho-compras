@@ -1,17 +1,24 @@
-<a href="">Voltar à lista</a>
 <div class="container">
-  <div class="product-info">
+  <a routerLink="/hub/products">Voltar à lista</a>
+  <div class="announcement-background">
     <img [src]="product?.imageUrl" class="product-image">
-    <h1 class="title">{{ product?.name }}</h1>
-    <span class="price">{{ product?.price }}</span>
-    <span class="description">{{ product?.description }}</span>
-  </div>
-  <div class="buy-options">
-    Vendido por
-    <span class="seller">{{ seller?.name }}</span>
-    <span class="stock">{{ product?.stock }}</span>
-    <input type="text" class="quantity">
-    <button class="buy-now">Comprar agora</button>
-    <button (click)="addIntoCart()" class="add-cart">Adicionar ao carrinho</button>
+    <div class="product-info">
+      Novo | 0 vendidos
+      <h1 class="title">{{ product?.name }}</h1>
+      <span class="price">{{ product?.price | currency }}</span>
+      <p>em 10x {{product!.price / 10 | currency}} sem juros</p>
+      <p>O que você precisa saber sobre este produto</p>
+
+      <span class="description">{{ product?.description }}</span>
+    </div>
+    <div class="buy-options">
+      <p>Vendido por</p>
+      <span class="seller">{{ seller?.name }}</span>
+      <p>Estoque disponível</p>
+      Quantidade: <input type="text" class="quantity">
+      <span class="stock">({{ product?.stock }} disponíveis)</span>
+      <button class="button buy-now">Comprar agora</button>
+      <button (click)="addIntoCart()" class="button add-cart">Adicionar ao carrinho</button>
+    </div>
   </div>
 </div>

@@ -1,9 +1,24 @@
 <div class="container">
-  <h1>Seus produtos à venda</h1>
-  <button (click)="openDialog('insert')">Adicionar novo</button>
+  <div class="header">
+    <span>Vendas > Anúncios</span>
+    <button (click)="openDialog('insert')" class="announce-button">Anunciar
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+  </div>
+  <div class="search">
+    <mat-icon>search</mat-icon>
+    <input class="search-input" type="text" placeholder="Buscar por # ou título">
+  </div>
   <div class="product-card" *ngFor="let product of products">
-    <h1>{{product.name}}</h1>
-    <span>{{product.price}}</span>
-    <button (click)="openDialog('update', product)">Editar</button>
+    <img [src]="product.imageUrl">
+    <div class="announcement-info">
+      <span>#{{ product.id }}</span>
+      <h1>{{ product.name }}</h1>
+      74 visitas | 0 vendas
+    </div>
+    <span class="middle">{{product.price | currency}}</span>
+    <span class="middle">{{product.stock}} un.</span>
+    <button (click)="openDialog('update', product)" class="edit-button">Editar</button>
+    <button class="remove-button">Excluir</button>
   </div>
 </div>

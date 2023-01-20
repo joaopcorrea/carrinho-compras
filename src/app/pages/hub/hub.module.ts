@@ -1,3 +1,4 @@
+import { MaterialModule } from './../../material/material.module';
 import { RouterModule } from '@angular/router';
 import { HubComponent } from './hub.component';
 import { SharedModule } from './../../shared/shared.module';
@@ -25,7 +26,8 @@ import { CartComponent } from '../hub/cart/cart.component';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MaterialModule
   ]
 })
 export class HubModule { }

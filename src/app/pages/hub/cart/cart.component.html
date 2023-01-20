@@ -1,4 +1,21 @@
-<p *ngFor="let item of cart?.cartItems">
-  {{ item.product.description }} -
-  {{ item.quantity }} x {{ item.product.price | currency }}
-</p>
+<div class="container">
+  <span class="cart">Carrinho (2)</span>
+  <div class="product-card" *ngFor="let item of cart?.cartItems">
+    <img [src]="item.product.imageUrl">
+    <div class="announcement-info">
+      <h1>{{ item.product.name }}</h1>
+      Frete grátis
+      <button>Excluir</button>
+    </div>
+    <div class="quantity">
+      <input class="quantity-input" type="text" [value]="item.quantity">
+      <span class="middle">{{item.product.stock}} disponíveis</span>
+    </div>
+
+    <span class="middle">{{item.product.price | currency}}</span>
+    <!-- <button (click)="openDialog('update', item.product)" class="edit-button">Editar</button>
+  <button class="remove-button">Excluir</button> -->
+  </div>
+  Total com frete R$250
+  <button>Realizar a compra</button>
+</div>

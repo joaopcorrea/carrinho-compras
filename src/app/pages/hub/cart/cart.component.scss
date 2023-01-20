@@ -1,0 +1,54 @@
+.container {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 #737373;
+  padding: 30px 85px;
+  margin: 30px 85px;
+
+  .product-card {
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+
+    img {
+      height: 80px;
+      object-fit: contain;
+      width: 80px;
+    }
+
+    .announcement-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 20px;
+      width: 400px;
+    }
+
+    .middle {
+      margin: 0 auto;
+    }
+
+    button {
+      border-color: transparent;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      padding: 5px;
+      width: 150px;
+    }
+
+    .edit-button {
+      background-color: #3483fa;
+      margin-left: auto;
+    }
+
+    .remove-button {
+      background-color: #fa3434;
+      margin-left: 15px;
+    }
+  }
+}
