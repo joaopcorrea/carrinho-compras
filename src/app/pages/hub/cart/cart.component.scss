@@ -2,15 +2,52 @@
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 2px 0 #737373;
-  padding: 30px 85px;
-  margin: 30px 85px;
+  padding: 50px 64px;
+  margin: 32px 87px;
+
+  .title-container {
+    border-bottom: 1px solid #ddd;
+
+    .cart-title {
+      border-bottom: 1px solid #ddd;
+      height: 45px;
+
+      .title {
+        border-bottom: 2px solid #3483fa;
+        color: #3483fa;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 0px 64px 15px 64px;
+        width: 105px;
+      }
+    }
+
+    .ui-progress-bar {
+      padding: 32px 0;
+      max-width: 400px;
+
+      .icon-full {
+        margin-left: 6px;
+        height: 18px;
+        width: auto;
+      }
+
+      .progress-bar {
+        background-color: #00a650;
+        border-radius: 4px;
+        height: 6px;
+        margin: 8px 0;
+        width: 100%;
+      }
+    }
+  }
 
   .product-card {
     align-items: center;
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
-    padding: 30px 50px;
+    padding: 30px 15px;
 
     img {
       height: 80px;
@@ -23,32 +60,93 @@
       flex-direction: column;
       justify-content: space-between;
       margin-left: 20px;
+      margin-right: auto;
       width: 400px;
+
+      .title {
+        margin-bottom: 10px;
+      }
+
+      .free {
+        color: #00a650;
+        font-size: 14px;
+      }
+
+      .remove-button {
+        background-color: transparent;
+        color: #3483fa;
+        cursor: pointer;
+        margin-top: 30px;
+        width: 60px;
+      }
+    }
+
+    .quantity-selector-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .quantity-selector {
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: flex;
+        height: 46px;
+        overflow: hidden;
+        padding: 10px;
+        width: 120px;
+
+        .button {
+          background-color: transparent;
+          border: none;
+          color: #3483fa;
+          cursor: pointer;
+          font-size: 24px;
+          font-weight: 500;
+          height: 48px;
+          line-height: 48px;
+          padding: 0;
+          text-align: center;
+          width: 12px;
+        }
+
+        .button.disabled {
+          color: #1f4e96 !important;
+          opacity: .3;
+        }
+
+        .input {
+          background-color: transparent;
+          border: none;
+          font-size: 16px;
+          font-weight: 400;
+          height: 48px;
+          overflow: auto;
+          text-align: center;
+          width: 74px;
+        }
+
+        .input:focus {
+          outline: none;
+        }
+      }
+
+      .stock {
+        color: #999;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 15px;
+      }
     }
 
     .middle {
       margin: 0 auto;
     }
 
-    button {
-      border-color: transparent;
-      border-radius: 4px;
-      color: #fff;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: 400;
-      padding: 5px;
-      width: 150px;
-    }
+    .price {
 
-    .edit-button {
-      background-color: #3483fa;
-      margin-left: auto;
-    }
-
-    .remove-button {
-      background-color: #fa3434;
-      margin-left: 15px;
     }
   }
 }

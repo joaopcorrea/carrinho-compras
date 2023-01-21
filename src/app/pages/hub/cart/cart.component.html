@@ -1,18 +1,32 @@
 <div class="container">
-  <span class="cart">Carrinho (2)</span>
+  <section class="title-container">
+    <div class="cart-title">
+      <h3 class="title">Carrinho (2)</h3>
+    </div>
+    <section class="ui-progress-bar">
+      <img class="icon-full"
+        src="https://http2.mlstatic.com/frontend-assets/bf-ui-library/1.144.0/assets/icons/full.svg">
+      <div class="progress-bar"></div>
+      <span>Inclua mais produtos, o frete é grátis!</span>
+    </section>
+  </section>
   <div class="product-card" *ngFor="let item of cart?.cartItems">
     <img [src]="item.product.imageUrl">
     <div class="announcement-info">
-      <h1>{{ item.product.name }}</h1>
-      Frete grátis
-      <button>Excluir</button>
+      <h1 class="title">{{ item.product.name }}</h1>
+      <span class="free">Frete grátis</span>
+      <a class="remove-button">Excluir</a>
     </div>
-    <div class="quantity">
-      <input class="quantity-input" type="text" [value]="item.quantity">
-      <span class="middle">{{item.product.stock}} disponíveis</span>
+    <div class="quantity-selector-container middle">
+      <div class="quantity-selector">
+        <button class="button disabled">-</button>
+        <input class="input" type="text" [value]="item.quantity">
+        <button class="button">+</button>
+      </div>
+      <span class="stock">{{item.product.stock}} disponíveis</span>
     </div>
 
-    <span class="middle">{{item.product.price | currency}}</span>
+    <span class="price">{{item.product.price | currency}}</span>
     <!-- <button (click)="openDialog('update', item.product)" class="edit-button">Editar</button>
   <button class="remove-button">Excluir</button> -->
   </div>
