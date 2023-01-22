@@ -26,13 +26,60 @@
     margin: 30px 0;
     width: 340px;
 
+    .sold {
+      color: rgba(0,0,0,.55);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
     .title {
-      margin: 10px 0;
+      margin: 5px 0;
+    }
+
+    .stars {
+      color: #3483fa;
+      display: flex;
+
+      mat-icon {
+        font-size: 18px;
+        width: 20px;
+      }
+    }
+
+    .best-seller {
+      background-color: #f73;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 5px;
+      padding: 0 3px;
+      width: 79px;
     }
 
     .price {
       font-size: 32px;
       font-weight: 300;
+      margin-top: 30px;
+    }
+
+    .parcel {
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 10px;
+
+      .green {
+        color: #00a650;
+      }
+    }
+
+    .description-info {
+      font-weight: 500;
+      margin-top: 30px;
+    }
+
+    .description {
+      margin-left: 16px;
     }
   }
 
@@ -43,6 +90,82 @@
     flex-direction: column;
     padding: 25px 16px;
     width: 275px;
+
+    .shipping-details {
+      display: flex;
+      flex-direction: column;
+
+      .shipping-text {
+        color: #00a650;
+        font-size: 16px;
+        font-weight: 400;
+
+        .bold {
+          font-weight: 500;
+        }
+      }
+    }
+
+    .quantity-selector-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 15px 0;
+
+      .quantity-selector {
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: flex;
+        height: 46px;
+        overflow: hidden;
+        padding: 10px;
+        width: 120px;
+
+        .quantity-selector-button {
+          background-color: transparent;
+          border: none;
+          color: #3483fa;
+          cursor: pointer;
+          font-size: 24px;
+          font-weight: 500;
+          height: 48px;
+          line-height: 48px;
+          padding: 0;
+          text-align: center;
+          width: 12px;
+        }
+
+        .quantity-selector-button.disabled {
+          color: #1f4e96 !important;
+          opacity: .3;
+        }
+
+        .input {
+          background-color: transparent;
+          border: none;
+          font-size: 16px;
+          font-weight: 400;
+          height: 48px;
+          overflow: auto;
+          text-align: center;
+          width: 74px;
+        }
+
+        .input:focus {
+          outline: none;
+        }
+      }
+
+      .stock {
+        color: #999;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 15px;
+      }
+    }
 
     .button {
       background-color: #3483fa;

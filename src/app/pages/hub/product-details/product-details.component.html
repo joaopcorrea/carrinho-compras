@@ -3,20 +3,41 @@
   <div class="announcement-background">
     <img [src]="product?.imageUrl" class="product-image">
     <div class="product-info">
-      Novo | 0 vendidos
+      <span class="sold">Novo | 0 vendidos</span>
       <h1 class="title">{{ product?.name }}</h1>
+      <div class="stars">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+      </div>
+      <div class="best-seller">MAIS VENDIDO</div>
       <span class="price">{{ product?.price | currency }}</span>
-      <p>em 10x {{product!.price / 10 | currency}} sem juros</p>
-      <p>O que você precisa saber sobre este produto</p>
-
-      <span class="description">{{ product?.description }}</span>
+      <p class="parcel">em <span class="green">10x {{product!.price / 10 | currency}} sem juros</span></p>
+      <p class="description-info">O que você precisa saber sobre este produto</p>
+      <span class="description"></span>
+      <ul class="description">
+        <li>{{ product?.description }}</li>
+      </ul>
     </div>
     <div class="buy-options">
+      <div class="shipping-details">
+        <span class="shipping-text"><mat-icon>local_shipping</mat-icon>Chegará grátis <span class="bold">amanhã</span></span>
+        <img src="">
+        <span class="shipping-text"><mat-icon>storefront</mat-icon>Retire grátis <span class="bold">a partir de amanhã</span> em uma agência Mercado Livre</span>
+      </div>
       <p>Vendido por</p>
       <span class="seller">{{ seller?.name }}</span>
       <p>Estoque disponível</p>
-      Quantidade: <input type="text" class="quantity">
-      <span class="stock">({{ product?.stock }} disponíveis)</span>
+      <div class="quantity-selector-container middle">
+        <div class="quantity-selector">
+          <button class="quantity-selector-button disabled">-</button>
+          <input class="input" type="text" [value]="0">
+          <button class="quantity-selector-button">+</button>
+        </div>
+        <span class="stock">{{ product?.stock }} disponíveis</span>
+      </div>
       <button class="button buy-now">Comprar agora</button>
       <button (click)="addIntoCart()" class="button add-cart">Adicionar ao carrinho</button>
     </div>
