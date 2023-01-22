@@ -27,9 +27,17 @@
     </div>
 
     <span class="price">{{item.product.price | currency}}</span>
-    <!-- <button (click)="openDialog('update', item.product)" class="edit-button">Editar</button>
-  <button class="remove-button">Excluir</button> -->
   </div>
-  Total com frete R$250
-  <button>Realizar a compra</button>
+  <div class="footer freight-info">
+    <span>Frete</span>
+    <span class="right">Grátis</span>
+  </div>
+  <div class="footer total-value">
+    <span>Total com frete</span>
+    <span class="right">R$250</span>
+  </div>
+  <div class="buy">
+    <button class="buy-button">Realizar a compra</button>
+  </div>
 </div>
+<div class="bottom-footer"></div>
