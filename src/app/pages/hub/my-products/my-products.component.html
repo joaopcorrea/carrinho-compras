@@ -1,6 +1,6 @@
 <div class="container">
   <div class="header">
-    <span>Vendas > Anúncios</span>
+    <span>Vendas > <span class="bold">Anúncios</span></span>
     <button (click)="openDialog('insert')" class="announce-button">Anunciar
       <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
@@ -12,11 +12,11 @@
   <div class="product-card" *ngFor="let product of products">
     <img [src]="product.imageUrl">
     <div class="announcement-info">
-      <span>#{{ product.id }}</span>
-      <h1>{{ product.name }}</h1>
-      74 visitas | 0 vendas
+      <span class="subtitle">#{{ product.id }}</span>
+      <h1 class="title">{{ product.name }}</h1>
+      <span class="subtitle">74 visitas | 0 vendas</span>
     </div>
-    <span class="middle">{{product.price | currency}}</span>
+    <span class="middle">{{product.price | currency: 'R$ '}}</span>
     <span class="middle">{{product.stock}} un.</span>
     <button (click)="openDialog('update', product)" class="edit-button">Editar</button>
     <button class="remove-button">Excluir</button>

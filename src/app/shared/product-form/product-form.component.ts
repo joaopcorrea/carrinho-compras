@@ -23,6 +23,8 @@ export class ProductFormComponent {
     stock: this.data.product?.stock,
   });
 
+  public imageUrl = this.form.value.imageUrl ?? '';
+
   constructor(
     private formBuilder: FormBuilder,
     private productService: ProductService,
@@ -53,5 +55,7 @@ export class ProductFormComponent {
     else {
       this.productService.updateProduct(product);
     }
+
+    this.dialogRef.close();
   }
 }

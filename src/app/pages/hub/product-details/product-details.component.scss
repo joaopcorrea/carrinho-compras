@@ -13,7 +13,7 @@
   padding: 15px;
 
   .product-image {
-    height: 500px;
+    height: 400px;
     float: left;
     margin: 30px;
     object-fit: contain;
@@ -27,7 +27,7 @@
     width: 340px;
 
     .sold {
-      color: rgba(0,0,0,.55);
+      color: rgba(0, 0, 0, .55);
       font-size: 14px;
       font-weight: 400;
     }
@@ -92,11 +92,31 @@
     width: 275px;
 
     .shipping-details {
+      color: #00a650;
       display: flex;
       flex-direction: column;
 
+      .block {
+        align-items: center;
+        display: flex;
+        margin-bottom: 25px;
+
+        mat-icon {
+          margin-right: 10px;
+          overflow: visible;
+        }
+
+        .full {
+          margin-left: 10px;
+          width: 50px;
+        }
+      }
+
+      .block:last-child {
+        align-items: flex-start;
+      }
+
       .shipping-text {
-        color: #00a650;
         font-size: 16px;
         font-weight: 400;
 
@@ -106,65 +126,86 @@
       }
     }
 
-    .quantity-selector-container {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 15px 0;
+    .seller {
+      color: #3483fa;
+    }
 
-      .quantity-selector {
+    .stock-available {
+      margin-top: 20px;
+
+      .stock-available-text {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .quantity-selector-container {
         align-items: center;
-        border: 1px solid rgba(0, 0, 0, .1);
-        border-radius: 4px;
-        box-sizing: border-box;
         display: flex;
-        height: 46px;
-        overflow: hidden;
-        padding: 10px;
-        width: 120px;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 0 15px;
 
-        .quantity-selector-button {
-          background-color: transparent;
-          border: none;
-          color: #3483fa;
-          cursor: pointer;
-          font-size: 24px;
-          font-weight: 500;
-          height: 48px;
-          line-height: 48px;
-          padding: 0;
-          text-align: center;
-          width: 12px;
+        .quantity-selector {
+          align-items: center;
+          border: 1px solid rgba(0, 0, 0, .1);
+          border-radius: 4px;
+          box-sizing: border-box;
+          display: flex;
+          height: 46px;
+          overflow: hidden;
+          padding: 10px;
+          width: 120px;
+
+          .quantity-selector-button {
+            background-color: transparent;
+            border: none;
+            color: #3483fa;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: 500;
+            height: 48px;
+            line-height: 48px;
+            padding: 0;
+            text-align: center;
+            width: 12px;
+          }
+
+          .quantity-selector-button.disabled {
+            color: #1f4e96 !important;
+            opacity: .3;
+          }
+
+          .input {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            height: 48px;
+            overflow: auto;
+            text-align: center;
+            width: 74px;
+          }
+
+          .input:focus {
+            outline: none;
+          }
         }
 
-        .quantity-selector-button.disabled {
-          color: #1f4e96 !important;
-          opacity: .3;
-        }
-
-        .input {
-          background-color: transparent;
-          border: none;
-          font-size: 16px;
-          font-weight: 400;
-          height: 48px;
-          overflow: auto;
-          text-align: center;
-          width: 74px;
-        }
-
-        .input:focus {
-          outline: none;
+        .stock {
+          color: #999;
+          font-size: 14px;
+          font-weight: 300;
+          margin-top: 15px;
         }
       }
 
-      .stock {
-        color: #999;
-        font-size: 14px;
-        font-weight: 300;
-        margin-top: 15px;
-      }
+    }
+
+    .stock-unavailable {
+      color: #fa3434;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 20px 0;
     }
 
     .button {
@@ -184,7 +225,7 @@
     }
 
     .button.add-cart {
-      background-color: rgba(65,137,230,.15);
+      background-color: rgba(65, 137, 230, .15);
       color: #3483fa;
     }
   }

@@ -1,5 +1,7 @@
+import { MyPurchasesComponent } from './pages/hub/my-purchases/my-purchases.component';
+import { MySalesComponent } from './pages/hub/my-sales/my-sales.component';
 import { ProductDetailsComponent } from './pages/hub/product-details/product-details.component';
-import { YourProductsComponent } from './pages/hub/your-products/your-products.component';
+import { MyProductsComponent } from './pages/hub/my-products/my-products.component';
 import { ProductListComponent } from './pages/hub/product-list/product-list.component';
 import { PasswordRecoveryComponent } from './pages/password-recovery/password-recovery.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
@@ -17,10 +19,12 @@ const routes: Routes = [
   { path: 'password-recovery', component: PasswordRecoveryComponent },
   { path: 'hub', component: HubComponent, canActivate: [AuthService], children: [
     { path: 'home', component: HomeComponent, canActivate: [AuthService] },
+    { path: 'cart', component: CartComponent, canActivate: [AuthService] },
     { path: 'products', component: ProductListComponent, canActivate: [AuthService] },
     { path: 'product/:id', component: ProductDetailsComponent, canActivate: [AuthService] },
-    { path: 'your-products', component: YourProductsComponent, canActivate: [AuthService] },
-    { path: 'cart', component: CartComponent, canActivate: [AuthService] },
+    { path: 'my-products', component: MyProductsComponent, canActivate: [AuthService] },
+    { path: 'my-purchases', component: MyPurchasesComponent, canActivate: [AuthService] },
+    { path: 'my-sales', component: MySalesComponent, canActivate: [AuthService] },
   ] },
   { path: '**', redirectTo: 'hub/home' }
 ];

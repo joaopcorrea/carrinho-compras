@@ -1,9 +1,19 @@
 <div class="container">
   <div class="product-card" *ngFor="let product of products" [routerLink]="'/hub/product/' + product.id">
-    <img [src]="product.imageUrl">
+    <img class="product-image" [src]="product.imageUrl">
+    <div *ngIf="!product.stock" class="stock-unavailable">
+      <span class="stock-unavailable-text">ESTOQUE INDISPONÍVEL</span>
+    </div>
     <div class="bottom">
+      <span class="best-seller">MAIS VENDIDO</span>
       <span>{{ product.name }}</span>
-      <span>{{ product.price | currency }}</span>
+      <span class="price">{{ product.price | currency: 'R$ ' }}</span>
+      <span class="parcel">em <span class="green">10x {{ product.price / 10 | currency: 'R$ '}} sem juros</span></span>
+      <div class="free-shipping">
+        <span class="shipping-text">Chegará grátis amanhã</span>
+        <img class="shipping-image"
+          src="https://http2.mlstatic.com/frontend-assets/bf-ui-library/1.144.0/assets/icons/full.svg">
+      </div>
     </div>
   </div>
 </div>

@@ -56,6 +56,7 @@
     background: #fff;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    color: #333;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1px;
@@ -72,10 +73,22 @@
       flex-direction: column;
       justify-content: space-between;
       margin-left: 20px;
-      width: 400px;
+      width: 300px;
+
+      .title {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      .subtitle {
+        color: #666;
+        font-size: 11px;
+      }
     }
 
     .middle {
+      color: #666;
+      font-size: 16px;
       margin: 0 auto;
     }
 

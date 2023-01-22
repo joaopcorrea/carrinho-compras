@@ -1,38 +1,29 @@
-<h1 mat-dialog-title>Hi {{data.product ? data.product.name : 'Novo Produto'}}</h1>
-<div mat-dialog-content>
-
-
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="image">Imagem Url</label>
+<h1 mat-dialog-title>{{this.data.operation === 'insert' ? 'Adicionar' : 'Atualizar'}} anúncio</h1>
+<div class="container" mat-dialog-content>
+  <form [formGroup]="form" id="form" (ngSubmit)="onSubmit()">
+    <img class="image" [src]="imageUrl">
+    <label for="image">Imagem Url</label>
+    <div class="image-upload">
       <input type="text" id="image" formControlName="imageUrl" />
+      <button class="primary button image-upload-button" (click)="imageUrl = this.form.value.imageUrl ?? ''">Atualizar</button>
     </div>
-
-    <div>
-      <label for="name">Nome</label>
-      <input type="text" id="name" formControlName="name" />
+    <label for="name">Título</label>
+    <input type="text" id="name" formControlName="name" />
+    <label for="description">Descrição</label>
+    <input type="text" id="description" formControlName="description" />
+    <div class="values">
+      <div class="price">
+        <label for="price">Preço</label>
+        <input type="number" id="price" formControlName="price" />
+      </div>
+      <div class="stock">
+        <label for="stock">Estoque</label>
+        <input type="number" id="stock" formControlName="stock" />
+      </div>
     </div>
-
-    <div>
-      <label for="price">Preço</label>
-      <input type="number" id="price" formControlName="price" />
-    </div>
-
-    <div>
-      <label for="description">Descrição</label>
-      <input type="text" id="description" formControlName="description" />
-    </div>
-
-    <div>
-      <label for="stock">Estoque</label>
-      <input type="number" id="stock" formControlName="stock" />
-    </div>
-
-    <button class="button" type="submit">Salvar</button>
   </form>
-
 </div>
 <div mat-dialog-actions>
-  <button mat-button>No Thanks</button>
-  <button mat-button cdkFocusInitial>Ok</button>
+  <button class="primary button" form="form" type="submit">Salvar</button>
+  <button class="secondary button" (click)="this.dialogRef.close();">Cancelar</button>
 </div>

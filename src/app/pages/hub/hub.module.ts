@@ -8,9 +8,11 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { YourProductsComponent } from './your-products/your-products.component';
+import { MyProductsComponent } from './my-products/my-products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from '../hub/cart/cart.component';
+import { MySalesComponent } from './my-sales/my-sales.component';
+import { MyPurchasesComponent } from './my-purchases/my-purchases.component';
 
 
 @NgModule({
@@ -18,9 +20,11 @@ import { CartComponent } from '../hub/cart/cart.component';
     HubComponent,
     HomeComponent,
     ProductListComponent,
-    YourProductsComponent,
+    MyProductsComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    MySalesComponent,
+    MyPurchasesComponent
   ],
   imports: [
     CommonModule,
