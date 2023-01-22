@@ -1,10 +1,23 @@
 .header {
+  align-items: center;
   background: #fff159;
   display: flex;
   flex-direction: column;
   height: calc(200px - (11px * 2));
+  justify-content: flex-start;
   padding: 11px 85px;
   width: calc(100% - (85px * 2));
+
+  .title {
+    font-size: 32px;
+    font-weight: 500;
+    padding-top: 15px;
+    margin-bottom: 0;
+  }
+  .title:last-child {
+    margin-top: 0;
+    padding-top: 10px;
+  }
 }
 
 .container {
@@ -24,12 +37,19 @@
     flex-direction: column;
     margin: 0 auto;
     margin-top: -50px;
-    padding: 50px;
+    padding: 25px 50px;
     transition: all 500ms ease;
     width: 100px;
+
+    img {
+      height: 100px;
+      margin-bottom: 25px;
+      width: 100px;
+    }
   }
 
   .card:hover {
+    box-shadow: 0 25px 20px 0 rgb(0 0 0 / 16%), 0 -1px 2px 0 rgb(0 0 0 / 10%);
     transform: translateY(-10px);
   }
 }

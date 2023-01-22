@@ -5,7 +5,7 @@
     <label for="image">Imagem Url</label>
     <div class="image-upload">
       <input type="text" id="image" formControlName="imageUrl" />
-      <button class="primary button image-upload-button" (click)="imageUrl = this.form.value.imageUrl ?? ''">Atualizar</button>
+      <button class="primary button image-upload-button" (click)="imageUrl = this.form.value.imageUrl ?? ''" type="button">Atualizar</button>
     </div>
     <label for="name">Título</label>
     <input type="text" id="name" formControlName="name" />

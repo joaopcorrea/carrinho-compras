@@ -42,7 +42,9 @@ export class MyProductsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.loadProducts();
+      setTimeout(() => {
+        this.loadProducts();
+      }, 500);
     });
   }
 }
