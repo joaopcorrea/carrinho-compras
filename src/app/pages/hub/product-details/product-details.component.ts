@@ -15,6 +15,7 @@ import Cart from 'src/app/models/cart.model';
 export class ProductDetailsComponent implements OnInit {
   product?: Product;
   seller?: User;
+  quantity: string = '0';
 
   constructor(
     private productService: ProductService,
@@ -34,7 +35,16 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
+  addQuantity = () => (this.quantity = (+this.quantity + 1).toString());
+
+  subtractQuantity = () => (this.quantity = (+this.quantity - 1).toString());
+
   addIntoCart() {
+    if (!+this.quantity) {
+      alert('Digite uma quantidade válida');
+      return;
+    }
+
     this.cartService.getCart().subscribe({
       next: (response) => {
         let cart = response as Cart;
@@ -43,7 +53,7 @@ export class ProductDetailsComponent implements OnInit {
           (i) => i.product.id === this.product?.id
         );
         if (item) item.quantity += 1;
-        else cart.cartItems.push({ product: this.product!, quantity: 1 });
+        else cart.cartItems.push({ product: this.product!, quantity: +this.quantity });
 
         this.cartService.updateCart(cart).subscribe({
           next: () => this.router.navigateByUrl('hub/cart'),

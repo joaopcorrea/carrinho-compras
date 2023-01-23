@@ -8,15 +8,12 @@ import { AuthService } from './auth.service';
 })
 export class CartService {
   private apiUrl = 'http://localhost:3000';
-  private userId;
 
-  constructor(authService: AuthService, private http: HttpClient) {
-    this.userId = authService.getLoggedUser()!.id;
-  }
+  constructor(private authService: AuthService, private http: HttpClient) {}
 
-  getCart = () => this.http.get(this.apiUrl + '/carts/' + this.userId);
+  getCart = () => this.http.get(this.apiUrl + '/carts/' + this.authService.getLoggedUser()!.id);
 
-  createCart = () => this.http.post(this.apiUrl + '/carts', new Cart(this.userId));
+  createCart = () => this.http.post(this.apiUrl + '/carts', new Cart(this.authService.getLoggedUser()!.id));
 
   updateCart = (cart: Cart) => this.http.put(this.apiUrl + '/carts/' + cart.id, cart);
 

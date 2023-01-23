@@ -1,6 +1,8 @@
-<div class="container">
-  <input class="search-input" type="text" placeholder="Buscar produtos...">
-  <button class="search-button">
-    <mat-icon>search</mat-icon>
-  </button>
-</div>
+<form (ngSubmit)="search()">
+  <div class="container">
+    <input class="search-input" [(ngModel)]="searchValue" name="search" placeholder="Buscar produtos...">
+    <button class="search-button" type="submit">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</form>

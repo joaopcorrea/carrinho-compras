@@ -1,7 +1,7 @@
 <div class="container">
   <section class="title-container">
     <div class="cart-title">
-      <h3 class="title">Carrinho (2)</h3>
+      <h3 class="title">Carrinho (0)</h3>
     </div>
     <section class="ui-progress-bar">
       <img class="icon-full"
@@ -15,18 +15,21 @@
     <div class="announcement-info">
       <h1 class="title">{{ item.product.name }}</h1>
       <span class="free">Frete grátis</span>
-      <a class="remove-button">Excluir</a>
+      <a class="remove-button" (click)="remove(item.product.id)">Excluir</a>
     </div>
     <div class="quantity-selector-container middle">
       <div class="quantity-selector">
-        <button class="button disabled">-</button>
+        <button class="button" (click)="subtractQuantity(item.product.id)"
+          [ngClass]="item.quantity < 2 ? 'disabled' : ''" [disabled]="item.quantity < 2">-</button>
         <input class="input" type="text" [value]="item.quantity">
-        <button class="button">+</button>
+        <button class="button" (click)="addQuantity(item.product.id)"
+          [ngClass]="item.quantity >= item.product.stock ? 'disabled' : ''"
+          [disabled]="item.quantity >= item.product.stock">+</button>
       </div>
       <span class="stock">{{item.product.stock}} disponíveis</span>
     </div>
 
-    <span class="price">{{item.product.price | currency}}</span>
+    <span class="price">{{item.product.price * item.quantity | currency: 'R$ '}}</span>
   </div>
   <div class="footer freight-info">
     <span>Frete</span>
@@ -34,9 +37,9 @@
   </div>
   <div class="footer total-value">
     <span>Total com frete</span>
-    <span class="right">R$250</span>
+    <span class="right">{{total | currency: 'R$ '}}</span>
   </div>
-  <div class="buy">
-    <button class="buy-button">Realizar a compra</button>
+  <div class="buy" *ngIf="cart?.cartItems?.length">
+    <button class="buy-button" (click)="finishCart()">Realizar a compra</button>
   </div>
 </div>

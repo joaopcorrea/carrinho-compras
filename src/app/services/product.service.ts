@@ -8,22 +8,20 @@ import Product from '../models/product.model';
 })
 export class ProductService {
   private apiUrl = 'http://localhost:3000';
-  private userId: number;
 
   private sellingProducts: Product[] = [];
   private purchasableProducts: Product[] = [];
 
   constructor(authService: AuthService, private http: HttpClient) {
-    this.userId = authService.getLoggedUser()!.id;
 
     this.http.get(this.apiUrl + '/products').subscribe({
       next: (products) => {
         this.sellingProducts = (products as Product[]).filter(
-          (p) => p.sellerId === this.userId
+          (p) => p.sellerId === authService.getLoggedUser()!.id
         );
 
         this.purchasableProducts = (products as Product[]).filter(
-          (p) => p.sellerId !== this.userId
+          (p) => p.sellerId !== authService.getLoggedUser()!.id
         );
       },
       error: (err) => {

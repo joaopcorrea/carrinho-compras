@@ -6,6 +6,7 @@ export default class Product {
   stock: number;
   imageUrl: string;
   sellerId: number;
+  soldQuantity: number;
 
   constructor(
     name: string,
@@ -22,6 +23,7 @@ export default class Product {
     this.stock = stock;
     this.imageUrl = imageUrl;
     this.sellerId = sellerId;
+    this.soldQuantity = 0;
   }
 
   private getNewId(): number {

@@ -1,1 +1,14 @@
-<p>my-purchases works!</p>
+<div class="container">
+  <section class="title-container">
+      <h1 class="title">Minhas compras</h1>
+  </section>
+  <div class="product-card" *ngFor="let item of items">
+    <img [src]="item.product.imageUrl">
+    <div class="announcement-info">
+      <h1 class="title">{{ item.product.name }}</h1>
+      <span class="free">Frete grátis</span>
+    </div>
+    <span class="price middle">{{item.quantity}} un.</span>
+    <span class="price">{{item.product.price * item.quantity | currency: 'R$ '}}</span>
+  </div>
+</div>

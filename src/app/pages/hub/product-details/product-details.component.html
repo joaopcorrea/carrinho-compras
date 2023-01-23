@@ -3,7 +3,7 @@
   <div class="announcement-background">
     <img [src]="product?.imageUrl" class="product-image">
     <div class="product-info">
-      <span class="sold">Novo | 0 vendidos</span>
+      <span class="sold">Novo | {{product!.soldQuantity}} vendidos</span>
       <h1 class="title">{{ product?.name }}</h1>
       <div class="stars">
         <mat-icon>star</mat-icon>
@@ -46,9 +46,11 @@
         <span class="stock-available-text">Estoque disponível</span>
         <div class="quantity-selector-container middle">
           <div class="quantity-selector">
-            <button class="quantity-selector-button disabled">-</button>
-            <input class="input" type="text" [value]="0">
-            <button class="quantity-selector-button">+</button>
+            <button class="quantity-selector-button" [ngClass]="+quantity < 1 ? 'disabled' : ''"
+              [disabled]="+quantity < 1" (click)="subtractQuantity()">-</button>
+            <input class="input" type="text" [(ngModel)]="quantity" name="quantity">
+            <button class="quantity-selector-button" [ngClass]="+quantity >= product!.stock ? 'disabled' : ''"
+              [disabled]="+quantity >= product!.stock" (click)="addQuantity()">+</button>
           </div>
           <span class="stock">{{ product?.stock }} disponíveis</span>
         </div>
@@ -56,8 +58,8 @@
       <span *ngIf="!product?.stock" class="stock-unavailable">
         Estoque indisponível
       </span>
-      <button *ngIf="product?.stock" class="button buy-now">Comprar agora</button>
-      <button *ngIf="product?.stock" (click)="addIntoCart()" class="button add-cart">Adicionar ao carrinho</button>
+      <button *ngIf="product?.stock" class="button buy-now" (click)="addIntoCart()">Comprar agora</button>
+      <button *ngIf="product?.stock" class="button add-cart" (click)="addIntoCart()">Adicionar ao carrinho</button>
     </div>
   </div>
 </div>

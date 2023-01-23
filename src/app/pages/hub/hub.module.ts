@@ -2,7 +2,7 @@ import { MaterialModule } from './../../material/material.module';
 import { RouterModule } from '@angular/router';
 import { HubComponent } from './hub.component';
 import { SharedModule } from './../../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -31,7 +31,8 @@ import { MyPurchasesComponent } from './my-purchases/my-purchases.component';
     ReactiveFormsModule,
     RouterModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class HubModule { }

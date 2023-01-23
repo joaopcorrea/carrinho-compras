@@ -25,10 +25,19 @@ export class RegistrationComponent {
   });
 
   onSubmit() {
+    if (
+      !this.registerForm.value.name ||
+      !this.registerForm.value.email ||
+      !this.registerForm.value.password
+    ) {
+      alert('Digite o nome, o e-mail e a senha');
+      return;
+    }
+
     const user = new User(
-      this.registerForm.value.name ?? '',
-      this.registerForm.value.email ?? '',
-      this.registerForm.value.password ?? ''
+      this.registerForm.value.name,
+      this.registerForm.value.email,
+      this.registerForm.value.password
     );
 
     this.userService.createUser(user).subscribe({
